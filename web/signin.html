@@ -6,19 +6,23 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Iniciar Sesión</title>
+        <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h2>Iniciar Sesión</h2>
-        <div id="mensaje"></div>
-        <form action="Login" method="post">
-            <input type="email" name="email">
-            <input type="password" name="password">
+        <h2>Registro</h2>
+        <form action="SignIn" method="post">
+            <p>Email <input type="email" name="email" required></p>
+            <p>Contraseña <input type="password" name="password" required>
+            <p>Nombre <input type="text" name="name" required></p>
+            <p>Apellidos <input type="text" name="lastname" required></p>
+            <p>Tarjeta de credito/debito <input type="text" name="card" required></p>
+            <p>CVV <input type="text" name="cvv" required></p>
+            <p>Fecha de vencimiento <input type="text" name="date" required></p>
+            <p>Propietario <input type="text" name="owner" required></p>
             <input type="submit" value="Iniciar Sesión">
         </form>
-        <p>O <a href="signin.html">registrate</a></p>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script>
             $.urlParam = function(name) {  
@@ -26,7 +30,7 @@ and open the template in the editor.
                 return results[1] || 0;  
             }
             if ($.urlParam('r') !== 0){
-                document.getElementById("mensaje").innerHTML = "Correo o contraseña no validos";
+                document.getElementById("mensaje").innerHTML = "Compruebe sus datos";
             }
         </script>
     </body>
